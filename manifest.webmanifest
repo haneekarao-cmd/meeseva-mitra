@@ -1,0 +1,10 @@
+{
+  "name": "MeeSeva Mitra",
+  "short_name": "MeeSeva Mitra",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f2",
+  "theme_color": "#173c35",
+  "lang": "te",
+  "description": "Telugu-first income certificate workflow"
+}
