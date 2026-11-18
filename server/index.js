@@ -131,6 +131,17 @@ app.get("/api/reports/summary", (req,res)=>{
   const overdue=db.prepare("SELECT COUNT(*) AS count FROM applications WHERE stage!='COMPLETED' AND dueAt < ?").get(new Date().toISOString()).count;
   res.json({generatedAt:new Date().toISOString(),total:Object.values(byStage).reduce((a,b)=>a+b,0),byStage,overdue});
 });
+ 
+const frontendPath = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../dist"
+);
+
+app.use(express.static(frontendPath));
+
+app.get(/^\/(?!api(?:\/|$)).*/, (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
 
 app.use((err,req,res,next)=>{
   console.error("API error:", err);

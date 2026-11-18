@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 
-const API = "http://localhost:3001/api";
+const API = "/api";
 const te = {
   brand:"మీ సేవా మిత్ర", sub:"ఆదాయ ధృవీకరణ పత్రం • అధికారుల పని సులభం",
   dashboard:"డ్యాష్‌బోర్డ్", applications:"దరఖాస్తులు", visits:"ఈ రోజు క్షేత్ర పర్యటనలు",
